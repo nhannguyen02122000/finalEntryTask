@@ -1,9 +1,5 @@
 import Head from 'next/head'
-import SpeakerCard from '../../components/speakerCard';
 import NewSpeakerCard from '../../components/newSpeakerCard';
-import styles from '../../styles/carddeck.module.css'
-import Loader from "react-loader-spinner";
-import AutoSizer from 'react-virtualized-auto-sizer'
 import {FixedSizeGrid as Grid} from 'react-window'
 
 const GUTTER_SIZE = 10;
@@ -17,24 +13,14 @@ export async function getStaticProps () {
   }
 }
 
-const Cell = ({ele, style}) => (
-  <div 
-    style={{
-      ...style,
-      left: style.left + GUTTER_SIZE,
-      top: style.top + GUTTER_SIZE,
-      width: style.width - GUTTER_SIZE,
-      height: style.height - GUTTER_SIZE
-    }}
-    className={`card`}>
-  </div>
-);
-
 const SSGRW = (props) => {
   const data = props.data;
 
   return (
     <>
+      <Head>
+        <title>SSG with RW</title>
+      </Head>
       <div className="container">
         <div className="row">
           <h1>SSG: HTML + fetch data</h1>
