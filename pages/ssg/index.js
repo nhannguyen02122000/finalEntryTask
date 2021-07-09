@@ -13,6 +13,17 @@ export async function getStaticProps () {
 
 const SSG = (props) => {
   console.log(props.data)
+  if (!props.data) {
+    return <div className={loaderStyles.central}>
+    <Loader
+      type="MutatingDots"
+      color="#6ac5fe"
+      secondaryColor = "Grey"
+      height={100}
+      width={100}
+    />
+    </div>
+  }
   return (
     <>
     <Head>SSG</Head>
