@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import SpeakerCard from '../../components/speakerCard';
 import styles from '../../styles/carddeck.module.css'
+import Loader from "react-loader-spinner";
 
 export async function getStaticProps () {
   const respond = await fetch('https://randomuser.me/api/?results=1000');
