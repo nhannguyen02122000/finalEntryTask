@@ -15,6 +15,9 @@ export default function Home() {
       <Link href="/ssg" passHref>
         <button type="button" className="btn btn-primary">SSG</button>
       </Link>
+      <Link href="/ssg/withrw" passHref>
+        <button type="button" className="btn btn-primary">SSG_RW</button>
+      </Link>
       <Link href="/csr" passHref>
         <button type="button" className="btn btn-primary">CSR</button>
       </Link>
