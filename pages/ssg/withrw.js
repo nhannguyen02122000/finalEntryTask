@@ -27,9 +27,6 @@ const Cell = ({ele, style}) => (
       height: style.height - GUTTER_SIZE
     }}
     className={`card`}>
-    <div className={`${styles.cardImg}`}>
-      <Image src={ele.picture.large} width={200} height={200} alt={`user_${ele.name.first}`}/>
-    </div>
   </div>
 );
 
