@@ -1,0 +1,36 @@
+.cardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.cardChildren {
+    list-style: none;
+    flex: 0 0 32%;
+    margin-bottom: 20px;
+}
+
+.cardImg {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 650px) {
+    .cardContainer {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .cardChildren {
+        flex: 0 0 48%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .cardChildren {
+        flex: 0 0 100%;
+    }
+    .cardContainer {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
