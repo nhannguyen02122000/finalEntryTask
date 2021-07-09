@@ -5,21 +5,12 @@ import loaderStyles from '../../styles/loader.module.css'
 import SpeakerCard from '../../components/speakerCard';
 import styles from '../../styles/carddeck.module.css'
 
-const fetchUsers = () => {
-  const {data, error} = useSWR('https://randomuser.me/api/?results=1000');
-  return {
-    data: data,
-    isLoading: !error && !data,
-    isError: error
-  }
-}
-
 const SSGCSR = () => {
-  const {data, isLoading, isError} = fetchUsers();
+  const {data, error} = useSWR('https://randomuser.me/api/?results=1000');
 
   console.log(data,"data");
 
-  if (isLoading) {
+  if (!data && !error) {
     return <div className={loaderStyles.central}>
     <Loader
       type="MutatingDots"
@@ -30,7 +21,7 @@ const SSGCSR = () => {
     />
     </div>
   }
-  if (isError) {
+  if (error) {
     return <h1>Data cannot be fetched!</h1>
   }
 
