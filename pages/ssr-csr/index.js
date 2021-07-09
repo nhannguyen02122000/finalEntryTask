@@ -1,16 +1,24 @@
 import Head from 'next/head'
-import useSWR from 'swr'
 import Loader from "react-loader-spinner";
 import loaderStyles from '../../styles/loader.module.css'
 import SpeakerCard from '../../components/speakerCard';
 import styles from '../../styles/carddeck.module.css'
+import React, { useEffect, useState } from 'react'
 
-const SSGCSR = () => {
-  const {data, error} = useSWR('https://randomuser.me/api/?results=1000');
+export async function getServerSideProps () {
+  const respond = await fetch('https://randomuser.me/api/?results=1000');
+  const data = await respond.json();
 
-  console.log(data,"data");
+  return {
+    props: {data: data.results}
+  }
+}
 
-  if (!data && !error) {
+const SSRCSR = (props) => {
+  const [isComponentMounted, setIsComponentMounted] = useState(false);
+  useEffect(() => setIsComponentMounted(true), []);
+
+  if(!isComponentMounted) {
     return <div className={loaderStyles.central}>
     <Loader
       type="MutatingDots"
@@ -21,20 +29,29 @@ const SSGCSR = () => {
     />
     </div>
   }
-  if (error) {
-    return <h1>Data cannot be fetched!</h1>
+
+  if (!props.data) {
+    return <div className={loaderStyles.central}>
+    <Loader
+      type="MutatingDots"
+      color="#6ac5fe"
+      secondaryColor = "Grey"
+      height={100}
+      width={100}
+    />
+    </div>
   }
 
   return (
     <>
     <Head>
-      <title>SSGCSR</title>
+      <title>SSRCSR</title>
     </Head>
     <div className="container">
       <div className="row">
-        <h1>SSG: HTML, CSR: fetch data</h1>
+        <h1>SSR: fetchdata CSR: HTML</h1>
         <div className={`card-deck ${styles.cardContainer}`}>
-            {data.results.map((ele, idx) =>
+            {props.data.map((ele, idx) =>
               <SpeakerCard 
                 key = {idx}
                 idx = {idx}
@@ -52,5 +69,5 @@ const SSGCSR = () => {
     </>
   )
 }
-
-export default SSGCSR;
+  
+export default SSRCSR;

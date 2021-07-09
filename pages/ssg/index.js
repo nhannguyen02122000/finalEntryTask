@@ -18,6 +18,7 @@ const SSG = (props) => {
     <Head>SSG</Head>
     <div className="container">
       <div className="row">
+        <h1>SSG: HTML + fetch data</h1>
         <div className={`card-deck ${styles.cardContainer}`}>
             {props.data.map((ele, idx) =>
               <SpeakerCard 
