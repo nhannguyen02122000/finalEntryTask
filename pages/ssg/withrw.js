@@ -41,7 +41,7 @@ const SSGRW = (props) => {
           <Grid
             columnCount={3}
             columnWidth={300+GUTTER_SIZE}
-            rowHeight={300+GUTTER_SIZE}
+            rowHeight={350+GUTTER_SIZE}
             height={560}
             width={1000}
             rowCount={1000}

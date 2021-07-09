@@ -1,4 +1,5 @@
 import styles from '../styles/carddeck.module.css'
+import Image from 'next/image'
 
 const NewSpeakerCard = ({ele, style, GUTTER_SIZE}) => {
   return(
@@ -12,6 +13,7 @@ const NewSpeakerCard = ({ele, style, GUTTER_SIZE}) => {
       }}
       className={`card`}>
       <div className={`${styles.cardImg}`}>
+        <Image src={ele.picture.large} width={50} height={50} alt={`user`}/>
       </div>
       <div className="card-body">
         <h5 className="card-title">{`${ele.name.first} ${ele.name.last}`}</h5>
