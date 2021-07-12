@@ -1,7 +1,5 @@
 import Head from 'next/head'
 import useSWR from 'swr'
-import SpeakerCard from '../../components/speakerCard';
-import styles from '../../styles/carddeck.module.css'
 import NewSpeakerCard from '../../components/newSpeakerCard';
 import {FixedSizeGrid as Grid} from 'react-window'
 const GUTTER_SIZE = 10;
