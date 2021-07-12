@@ -1,5 +1,6 @@
 //Fetch data SSR, Render CSR
 import Head from 'next/head'
+import React, { useEffect, useState } from 'react'
 import NewSpeakerCard from '../../components/newSpeakerCard';
 import {FixedSizeGrid as Grid} from 'react-window'
 
@@ -32,7 +33,6 @@ const SSRCSRRW = (props) => {
         <div className="row">
           <h1>SSR: fetch data + CSR: HTML render</h1>
           <Grid
-            style={{overflow:"hidden"}}
             columnCount={3}
             columnWidth={300+GUTTER_SIZE}
             rowHeight={350+GUTTER_SIZE}
