@@ -20,13 +20,10 @@ const SSRCSR = (props) => {
 
   if(!isComponentMounted) {
     return <div className={loaderStyles.central}>
-    <Loader
-      type="MutatingDots"
-      color="#6ac5fe"
-      secondaryColor = "Grey"
-      height={100}
-      width={100}
-    />
+      <Head>
+        <title>SSRCSR_SV_RW</title>
+      </Head>
+      <h1>Server fetch data, nhưng component không mount</h1>
     </div>
   }
 

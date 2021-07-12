@@ -7,7 +7,13 @@ const SSGCSR = () => {
   const {data, error} = useSWR('https://randomuser.me/api/?results=1000');
 
   if (!data) {
-    return <h1>SSG nè</h1>;
+    return (<>
+        <Head>
+          <title>SSGCSR_SV_RW</title>
+        </Head>
+        <h1>SSG nè, do data fetch từ client</h1>;
+      </>
+    )
   }
 
   let res = data.results;

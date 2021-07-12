@@ -10,7 +10,7 @@ const CSR = () => {
     useEffect(() => setIsComponentMounted(true), []);
 
     if(!isComponentMounted) {
-        return <></>;
+        return <h1>Do không được ount, Pre-render ở server</h1>;
     }
   
     if (!data && !error) {
