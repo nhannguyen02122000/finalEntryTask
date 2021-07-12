@@ -21,7 +21,7 @@ const SSRCSRRW = (props) => {
   useEffect(() => setIsComponentMounted(true), []);
 
   if (!isComponentMounted) {
-    return <></>
+    return <h1>SSR nè</h1>
   }
 
   return (
