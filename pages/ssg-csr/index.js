@@ -1,7 +1,5 @@
 import Head from 'next/head'
 import useSWR from 'swr'
-import Loader from "react-loader-spinner";
-import loaderStyles from '../../styles/loader.module.css'
 import SpeakerCard from '../../components/speakerCard';
 import styles from '../../styles/carddeck.module.css'
 
