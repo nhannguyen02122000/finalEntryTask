@@ -18,6 +18,7 @@ const SSGCSR = () => {
     <div className="container">
       <div className="row">
         <h1>SSG: HTML, CSR: fetch data</h1>
+        <p>Do server không lấy được data nên trả về rỗng</p>
         <div className={`card-deck ${styles.cardContainer}`}>
             {data.results.map((ele, idx) =>
               <SpeakerCard 

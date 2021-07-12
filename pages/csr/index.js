@@ -46,6 +46,7 @@ const CSR = () => {
       <div className="container">
         <div className="row">
           <h1>CSR: HTML + fetch data</h1>
+          <p>Data được fetch tại client, HTML pre-render ở server chỉ có Loader</p>
           <div className={`card-deck ${styles.cardContainer}`}>
               {data.results.map((ele, idx) =>
                 <SpeakerCard 

@@ -50,6 +50,7 @@ const SSRCSR = (props) => {
     <div className="container">
       <div className="row">
         <h1>SSR: fetchdata CSR: HTML</h1>
+        <p>Data được fetch ở server, do ko được mount nên trả về Loader</p>
         <div className={`card-deck ${styles.cardContainer}`}>
             {props.data.map((ele, idx) =>
               <SpeakerCard 
