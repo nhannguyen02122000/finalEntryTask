@@ -2,9 +2,10 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
     width: 50%;
     margin: auto;
+    row-gap: 12px;
 }
 .title {
     display: flex;

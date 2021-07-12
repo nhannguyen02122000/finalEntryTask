@@ -21,11 +21,20 @@ export default function Home() {
       <Link href="/csr" passHref>
         <button type="button" className="btn btn-primary">CSR</button>
       </Link>
+      <Link href="/csr/withrw" passHref>
+        <button type="button" className="btn btn-primary">CSR_RW</button>
+      </Link>
       <Link href="/ssg-csr" passHref>
         <button type="button" className="btn btn-primary">SSG+CSR</button>
       </Link>
+      <Link href="/ssg-csr/withrw" passHref>
+        <button type="button" className="btn btn-primary">SSG+CSR_RW</button>
+      </Link>
       <Link href="/ssr-csr" passHref>
         <button type="button" className="btn btn-primary">SSR+CSR</button>
+      </Link>
+      <Link href="/ssr-csr/withrw" passHref>
+        <button type="button" className="btn btn-primary">SSR+CSR_RW</button>
       </Link>
     </div>
     </>
