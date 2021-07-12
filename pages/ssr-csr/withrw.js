@@ -20,9 +20,9 @@ const SSRCSRRW = (props) => {
   const [isComponentMounted, setIsComponentMounted] = useState(false);
   useEffect(() => setIsComponentMounted(true), []);
 
-  // if (!isComponentMounted) {
-  //   return <></>
-  // }
+  if (!isComponentMounted) {
+    return <></>
+  }
 
   return (
     <>
