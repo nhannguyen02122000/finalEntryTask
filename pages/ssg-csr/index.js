@@ -8,6 +8,10 @@ import styles from '../../styles/carddeck.module.css'
 const SSGCSR = () => {
   const {data, error} = useSWR('https://randomuser.me/api/?results=1000');
 
+  if (!data) {
+    return <></>;
+  }
+
   return (
     <>
     <Head>
