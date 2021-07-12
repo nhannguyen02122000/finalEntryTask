@@ -8,23 +8,6 @@ import styles from '../../styles/carddeck.module.css'
 const SSGCSR = () => {
   const {data, error} = useSWR('https://randomuser.me/api/?results=1000');
 
-  console.log(data,"data");
-
-  if (!data && !error) {
-    return <div className={loaderStyles.central}>
-    <Loader
-      type="MutatingDots"
-      color="#6ac5fe"
-      secondaryColor = "Grey"
-      height={100}
-      width={100}
-    />
-    </div>
-  }
-  if (error) {
-    return <h1>Data cannot be fetched!</h1>
-  }
-
   return (
     <>
     <Head>
